@@ -81,7 +81,7 @@ if(isset($_POST['delete_cat']))
         <form action='DeleteUpdateCategory.php' method = 'post' enctype='multipart/form-data'>
           <input type='hidden'class='form-control' id='cat_id' name='cat_id' value='$cat_id'>
         <th> 
-        <input type='text'class='form-control' required pattern='[^\s][A-Za-z]{1,15}(\W|_|-)?[A-Za-z]{1,15}[^\s]' id='cat_title' name='cat_title' value='$cat_title'>
+        <input type='text'class='form-control' required pattern='[^\s][A-Za-z]{1,15}(\s)?(\W|_|-)?(\s)?[A-Za-z]{1,15}[^\s]' id='cat_title' name='cat_title' value='$cat_title'>
         </th>
          <th> 
         <input type='text' class='form-control' type='file' required pattern='[^\s].{1,100}[^\s]'  id='cat_desc' name='cat_desc' value='$cat_desc'>

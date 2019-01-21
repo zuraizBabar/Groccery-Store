@@ -1,5 +1,33 @@
 <?php require "Header.php";
 require "Server/Function.php";
+ require "Server/GroceryDBConnection.php";
+if(isset($_POST['SignInButton']))
+{
+    $UserName = $_POST['signin_username'];
+    $Password = $_POST['signin_exampleInputPassword1'];
+    $Email = $_POST['signin_exampleInputEmail1'];
+    $reg_name = "/[A-Za-z](\d|\w|\.|-){2,30}/";
+    $reg_pass = "/(\d|\w|\.|-){0,15}[A-Z](\d|\w|\.|-){0,15}/";
+    $reg_email = "/(\d|\w|\.|-){1,30}@(gmail|yahoo|hotmail)\.com/";
+    if(preg_match($reg_name,$UserName))
+    {
+        if(preg_match($reg_pass,$Password)){
+            if(preg_match($reg_email,$Email)){
+                $insert = "insert into signin(UserName,Password,Email)
+                                VALUES ('$UserName','$Password','$Email')";
+                mysqli_query($DB,$insert);
+            }else{
+                echo "Invalid Email Enter";
+            }
+        }
+        else {
+            echo "Invalid Password Enter";
+        }
+    }
+    else{
+        echo "Invalid Name Enter";
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +38,10 @@ require "Server/Function.php";
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="keywords" content="html,css,javascript,xml">
+    <meta name="discription" content="Hum Mart (Online Groccery Store) ">
+    <meta name="author" content="Zuraiz Ahmed Babar, Huzaifa Rizwan, Rao Ammar, Munnan Asim">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="Css/Style.css">
@@ -76,7 +108,9 @@ require "Server/Function.php";
         <div class="col-12 form-inline ">
                  <h1 style="font-family: 'Droid Serif';font-size:50px ;color: saddlebrown;text-align: center"> Category </h1> <br>
             </div>
+            <div class='row hovereffect' style='margin-left: 0px;  margin-right: 0px;width: 100%'>
             <?php getCats(); ?>
+            </div>
         </div>
     </div>
 
