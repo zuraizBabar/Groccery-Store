@@ -60,11 +60,12 @@ if(isset($_POST['delete_cat']))
     </div>
 </div>
 
-<table style="width:100%;">
+<table style="float:left;width:1200px;overflow: auto;overflow-y: auto;">
     <tr>
         <th align="left" valign="middle" >Title</th>
         <th align="left" valign="middle" >Description</th>
-        <th align="left" valign="middle" >Image</th>
+        <th align="left" valign="middle" >Image Show</th>
+        <th align="left" valign="middle" >Image Select</th>
         <th align="left" valign="middle" >Update</th>
         <th align="left" valign="middle" >Delete</th>
     </tr>
@@ -77,7 +78,7 @@ if(isset($_POST['delete_cat']))
         $cat_title = $row['Title'];
         $cat_desc = $row['Description'];
         $cat_image = $row['Image'];
-        echo  "<tr>
+        echo  "<tr style='height: 100%'>
         <form action='DeleteUpdateCategory.php' method = 'post' enctype='multipart/form-data'>
           <input type='hidden'class='form-control' id='cat_id' name='cat_id' value='$cat_id'>
         <th> 
@@ -87,7 +88,10 @@ if(isset($_POST['delete_cat']))
         <input type='text' class='form-control' type='file' required pattern='[^\s].{1,100}[^\s]'  id='cat_desc' name='cat_desc' value='$cat_desc'>
         </th>  
         <th>
-            <input class='form-control' type='file' pattern='[^\s].{1,20}\.(jpg|jpeg|png)' id='cat_image' name='cat_image' style='padding-bottom: 34px'>
+            <img src='../images/$cat_image' style='width: 75%; height: 75%'>
+        </th>
+        <th>
+            <input class='form-control' type='file' pattern='[^\s].{1,20}\.(jpg|jpeg|png)' id='cat_image' name='cat_image' style='padding-bottom: 34px; width: 75%'>
         </th>
         <th>
              <button type='submit' name='update_cat' class='btn btn-primary btn-block'>Update</button>
