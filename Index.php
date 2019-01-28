@@ -1,33 +1,6 @@
-<?php require "Header.php";
-require "Server/Function.php";
- require "Server/GroceryDBConnection.php";
-if(isset($_POST['SignInButton']))
-{
-    $UserName = $_POST['signin_username'];
-    $Password = $_POST['signin_exampleInputPassword1'];
-    $Email = $_POST['signin_exampleInputEmail1'];
-    $reg_name = "/[A-Za-z](\d|\w|\.|-){2,30}/";
-    $reg_pass = "/(\d|\w|\.|-){0,15}[A-Z](\d|\w|\.|-){0,15}/";
-    $reg_email = "/(\d|\w|\.|-){1,30}@(gmail|yahoo|hotmail)\.com/";
-    if(preg_match($reg_name,$UserName))
-    {
-        if(preg_match($reg_pass,$Password)){
-            if(preg_match($reg_email,$Email)){
-                $insert = "insert into signin(UserName,Password,Email)
-                                VALUES ('$UserName','$Password','$Email')";
-                mysqli_query($DB,$insert);
-            }else{
-                echo "Invalid Email Enter";
-            }
-        }
-        else {
-            echo "Invalid Password Enter";
-        }
-    }
-    else{
-        echo "Invalid Name Enter";
-    }
-}
+<?php
+include "Header.php";
+include "Server/Function.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -114,7 +87,7 @@ if(isset($_POST['SignInButton']))
         </div>
     </div>
 
-    <?php require "Footer.php";
+    <?php include "Footer.php";
     ?>
 
 </div>

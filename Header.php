@@ -1,5 +1,7 @@
+<?php
+session_start();
+include "Server/GroceryDBConnection.php";
 
-  <?php require "Server/GroceryDBConnection.php";
   function getcategory()
   {
       global $DB;
@@ -30,19 +32,28 @@
                     <a href="Header.html" class=" dropdown-toggle fa fa-home " data-toggle="dropdown" data-target="#dropdowntarget"> Categories</a>
                     <div class="dropdown-menu bg-warning" aria-labelledby="dropdowntarget" style="padding: 0px">
                         <?php
-
                         getcategory();?>
                     </div>
-                </li>
-                <li >
-                    <a href= "Login.php" class="fa fa-sign-in-alt"> Login</a>
                 </li>
                 <li>
                     </i> <a href="About.php" class="fa fa-user"> About</a>
                 </li>
                 <li>
-                    <a href="Contact.php" class="fa fa-envelope"style="padding-right: 30px"> Contact</a>
+                    <a href="Contact.php" class="fa fa-envelope"> Contact</a>
                 </li>
+                <?php
+                if(!isset($_SESSION['useremail']))
+                {
+                    echo "<li >
+                    <a href= 'Login.php' class='fa fa-sign-in-alt' style='padding-right: 30px'> Login</a>
+                     </li>";
+                }
+                else{
+                    echo "<li >
+                    <a href= 'Logout.php' class='fa fa-sign-in-alt' style='padding-right: 30px'> Logout</a>
+                     </li>";
+                }
+                ?>
             </ul>
         </div>
 

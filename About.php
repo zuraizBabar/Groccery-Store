@@ -1,4 +1,4 @@
-<?php require "Header.php";
+<?php include "Header.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +48,7 @@
             </div>
         </div>
     </div>
-    <?php require "Footer.php";
+    <?php include "Footer.php";
     ?>
 
 </div>

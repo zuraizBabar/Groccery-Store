@@ -337,7 +337,7 @@ color: brown;
     }
     .form-container
     {
-        height: 370px;
+        height: 420px;
         padding-left: 15px;
         padding-right: 15px;
         border: 2px solid saddlebrown;
@@ -376,7 +376,7 @@ input[id = 'login_exampleInputPassword1']:valid
     }
     .form-containers
     {
-        height: 430px;
+        height: 490px;
         padding-left: 15px;
         padding-right: 15px;
         border: 2px solid saddlebrown;
@@ -449,36 +449,9 @@ input[id = 'Forgot_exampleInputEmail']:valid
 }
 
 
-/*
-    Insert Categroy
-*/
-input[id = 'in_cat_image']:valid
-{
-    border: 2px solid green;
-}
-input[id = 'in_cat_image']:invalid
-{
-    border: 2px solid red;
-}
-input[id = 'in_cat_desc']:valid
-{
-    border: 2px solid green;
-}
-input[id = 'in_cat_desc']:invalid
-{
-    border: 2px solid red;
-}
-input[id = 'in_cat_title']:valid
-{
-    border: 2px solid green;
-}
-input[id = 'in_cat_title']:invalid
-{
-    border: 2px solid red;
-}
 
 /*
-    Delete Update Category
+    Insert Update Category
 */
 input[id = 'cat_image']:valid
 {

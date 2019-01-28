@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 21, 2019 at 04:29 PM
+-- Generation Time: Jan 28, 2019 at 06:14 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -21,6 +21,24 @@ SET time_zone = "+00:00";
 --
 -- Database: `grocery`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admins`
+--
+
+CREATE TABLE `admins` (
+  `Email` varchar(100) NOT NULL,
+  `Password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`Email`, `Password`) VALUES
+('mmunnan450@gmail.com', '25465879');
 
 -- --------------------------------------------------------
 
@@ -70,6 +88,12 @@ INSERT INTO `signin` (`UserName`, `Password`, `Email`) VALUES
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`Email`);
 
 --
 -- Indexes for table `category`

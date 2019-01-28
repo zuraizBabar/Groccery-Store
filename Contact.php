@@ -1,4 +1,4 @@
-<?php require "Header.php";
+<?php include "Header.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="Css/Style.css">
 
 
-
 </head>
 <body>
 <div id="wrapper">
@@ -31,15 +30,16 @@
                     <h1 style="margin: 18px 0px;font-weight: bold; font-size: 52px;font-family: 'Hobo Std';color: saddlebrown">Contact</h1>
                     <div class="form-group" style="margin: 0px 0px">
                         <label for="username" class="float-left" style=" font-weight: bold; font-size: 15px;font-family: 'Hobo Std';color: saddlebrown">UserName</label>
-                        <input type="text" class="form-control" id="contact_username" required pattern = "[A-Za-z](\d|\w|\.|-){2,30}"  placeholder="UserName" style=" font-weight: lighter; font-size: 15px;font-family: 'Hobo Std';color: black">
+                        <input type="text" class="form-control" id="contact_username" required pattern = "[A-Za-z](\d|\w|\.|-){2,30}"  placeholder="UserName" style=" font-weight: lighter; font-size: 15px;font-family: 'Hobo Std';color: saddlebrown">
                     </div>
                     <div class="form-group" style="margin: 0px 0px">
                         <label for="exampleInputEmail1" class="float-left" style=" font-weight: bold; font-size: 15px;font-family: 'Hobo Std';color: saddlebrown">Email </label>
-                        <input type="email" class="form-control" id="contact_Email1" required pattern="(\d|\w|\.|-){1,30}@(gmail|yahoo|hotmail)\.com" placeholder="Email" style=" font-weight: lighter; font-size: 15px;font-family: 'Hobo Std';color: black">
+                        <input type="email" class="form-control" id="contact_Email1" required pattern="(\d|\w|\.|-){1,30}@(gmail|yahoo|hotmail)\.com" placeholder="Email" style=" font-weight: lighter; font-size: 15px;font-family: 'Hobo Std';color: saddlebrown">
+                        <span  class="text-danger" id="hint" style="margin: 18px 0px;font-weight: bold; font-size: small ;font-family: 'Hobo Std';color: saddlebrown">></span>
                     </div>
                     <div class="form-group" style="margin: 0px 0px;padding-bottom: 14px">
                         <label for="exampleInputPassword1"  class="float-left" style=" font-weight: bold; font-size: 15px;font-family: 'Hobo Std';color: saddlebrown">Message</label>
-                        <input type="text" class="form-control"  id="contact_message"  required pattern=".{10,}" placeholder="Message" style=" font-weight: lighter; font-size: 15px;font-family: 'Hobo Std';color: black;padding-bottom: 14px;">
+                        <input type="text" class="form-control"  id="contact_message"  required pattern=".{10,}" placeholder="Message" style=" font-weight: lighter; font-size: 15px;font-family: 'Hobo Std';color: saddlebrown">
                     </div>
                     <button type="submit" class="btn btn-warning  btn-block " class="form-control" style=" font-weight: bold; font-size: 15px;font-family: 'Hobo Std';color: saddlebrown">Submit</button>
                 </form>
@@ -48,7 +48,7 @@
     </div>
 
 
-    <?php require "Footer.php";
+    <?php include "Footer.php";
     ?>
 
 </div>
